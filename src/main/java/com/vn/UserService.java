@@ -6,12 +6,12 @@ import org.hibernate.*;
 import com.vn.entities.*;
 import com.vn.utils.HibernateUtil;
 
-public class UserMain {
+public class UserService {
 	
 	static SessionFactory factory = HibernateUtil.getSessionFactory();
 	
 	public static void main(String[] args) {
-		UserMain main = new UserMain();
+		UserService main = new UserService();
 		List<User> users = main.getAllUsers();
 		for (User user : users) {
 			System.out.println(user);
