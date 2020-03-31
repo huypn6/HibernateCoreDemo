@@ -12,21 +12,29 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="category")
+@Table(name = "category")
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
-	
+
 	private String name;
 	private String description;
 	private String image;
-	
-	@OneToMany(mappedBy = "category", fetch=FetchType.EAGER)
+
+	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
 	private List<Product> product = new ArrayList<Product>();
- 
+
+	public List<Product> getProduct() {
+		return product;
+	}
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -63,5 +71,5 @@ public class Category implements Serializable {
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", image=" + image + "]";
 	}
-	
+
 }

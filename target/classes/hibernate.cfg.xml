@@ -15,6 +15,8 @@
 
         <!-- <mapping resource="book.hbm.xml" /> -->
         <mapping class="com.vn.entities.User"/>
+        <mapping class="com.vn.entities.Category"/>
+        <mapping class="com.vn.entities.Product"/>
         
     </session-factory>
 </hibernate-configuration>

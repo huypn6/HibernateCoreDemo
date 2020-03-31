@@ -51,9 +51,9 @@ public class CategoryService {
 			}*/
 			
 			String hql = "SELECT c FROM Category c where c.id =:idCA";
-			Query query = (Query) session.createQuery(hql);	
+			org.hibernate.Query query =  session.createQuery(hql);	
 			query.setParameter("idCA", id);
-			c = (Category) query.getSingleResult();
+			c = (Category) query.uniqueResult();
 			
 			//3. close session
 			//tx.commit();
